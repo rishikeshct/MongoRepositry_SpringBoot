@@ -27,11 +27,19 @@ public class CourseApiApp implements CommandLineRunner{
 	public void run(String... arg0) throws Exception {
 		// TODO Auto-generated method stub
 		List<Topic> topics = new ArrayList<>(Arrays.asList(
-				new Topic("spring", "Spring Framework", "Spring framework description."),
-				new Topic("java", "Core Java", "Core Java description."),
-				new Topic("php", "Core PHP", "Core PHP description.")
+				new Topic("spring", "Spring Framework", "Spring framework description.",Arrays.asList(new Topic.Content("JAVA CORE CONCEPTS", "JAVA"))),
+				new Topic("java", "Core Java", "Core Java description.",Arrays.asList(new Topic.Content("JAVA CORE CONCEPTS", "JAVA CORE CONCEPTS"))),
+				new Topic("php", "Core PHP", "Core PHP description.",Arrays.asList(new Topic.Content("JAVA CORE CONCEPTS", "JAVA CORE CONCEPTS")))
 				));
 		topicRepository.save(topics);
+		
+		System.out.println("-----------------------------------------------------------------------");
+		for(Topic topic: topics ){
+			//System.out.println("Topic ID: "+ topic.getId() +" and Topic Name: "+topic.getName()+" and Topic Description" + topic.getDescription());
+			System.out.println(String.format("%-10s= %-10s %s= %-20s %s= %s" ,"Topic ID: ",topic.getId(),"Topic Name:", topic.getName(),"Topic Description", topic.getDescription()));
+		}
+		System.out.println("-----------------------------------------------------------------------");
+
 	}
 
 }

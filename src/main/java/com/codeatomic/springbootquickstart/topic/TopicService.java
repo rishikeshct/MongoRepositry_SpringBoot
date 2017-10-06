@@ -1,7 +1,5 @@
 package com.codeatomic.springbootquickstart.topic;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +11,7 @@ public class TopicService {
 	@Autowired
 	private TopicRepository topicRepository;
 	
-	private List<Topic> topics = new ArrayList<>(Arrays.asList(
-			new Topic("spring", "Spring Framework", "Spring framework description."),
-			new Topic("java", "Core Java", "Core Java description."),
-			new Topic("php", "Core PHP", "Core PHP description.")
-			));
+
 	
 	public List<Topic> getAllTopics() {
 		return this.topicRepository.findAll();
@@ -36,6 +30,6 @@ public class TopicService {
 	}
 
 	public void deleteTopic(String id) {
-		this.topicRepository.delete(id);;
+		this.topicRepository.delete(id);
 	}
 }
