@@ -28,6 +28,11 @@ public class TopicController {
 		return topicService.getTopic(id);
 	}
 	
+	@RequestMapping("/topics/{description}")
+	public List<Topic> getTopicByDescription(@PathVariable String description) {
+		return topicService.getTopicByDescription(description);
+	}
+	
 
 	@RequestMapping(method=RequestMethod.POST, value="/topics")
 	public String addTopic(@RequestBody Topic topic) {

@@ -39,7 +39,13 @@ public class CourseApiApp implements CommandLineRunner{
 			System.out.println(String.format("%-10s= %-10s %s= %-20s %s= %s" ,"Topic ID: ",topic.getId(),"Topic Name:", topic.getName(),"Topic Description", topic.getDescription()));
 		}
 		System.out.println("-----------------------------------------------------------------------");
-
+		
+		Topic topic = new Topic();
+	
+		for(Topic topic1: topicRepository.findByTopicContentTopicContent("JAVA CORE CONCEPTS") ){
+			//System.out.println("Topic ID: "+ topic.getId() +" and Topic Name: "+topic.getName()+" and Topic Description" + topic.getDescription());
+			System.out.println(String.format("%-10s= %-10s %s= %-20s %s= %s" ,"Topic ID: ",topic1.getId(),"Topic Name:", topic1.getName(),"Topic Description", topic1.getDescription()));
+		}
 	}
 
 }

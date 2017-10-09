@@ -20,6 +20,10 @@ public class TopicService {
 	public Topic getTopic(String id) {
 		return (Topic) this.topicRepository.findOne(id);
 	}
+	
+	public List<Topic> getTopicByDescription(String desc){
+		return this.topicRepository.findByTopicContentTopicContent(desc);
+	}
 
 	public void addTopic(Topic topic) {
 		this.topicRepository.save(topic);
